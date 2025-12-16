@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book a Table | Sair Fecht</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+  <a href="index.html" class="logo-link">
+    <img src="images/logo.png" alt="Sair Fecht Logo" class="logo">
+  </a>
+
+  <ul class="nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="bookingtable.html" class="active">Book a Table</a></li>
+  </ul>
+</header>
+
+<main class="content">
+<h2>Book a Table</h2>
+
+<form id="bookingForm" class="booking-form">
+<input type="text" placeholder="First Name" required>
+<input type="text" placeholder="Last Name" required>
+<input type="email" placeholder="Email" required>
+<input type="date" required>
+<input type="time" min="12:00" max="21:00" required>
+
+<select id="service" required>
+<option value="">Select Service</option>
+<option value="lunch">Lunch</option>
+<option value="dinner">Dinner</option>
+</select>
+
+<select id="courses" style="display:none;">
+<option value="">Select Courses</option>
+<option value="2">2 Courses</option>
+<option value="3">3 Courses</option>
+</select>
+
+<input type="number" min="1" placeholder="Number of Guests" required>
+<button type="submit">Confirm Booking</button>
+</form>
+
+<div id="confirmation" style="display:none;">
+<h3>Booking Confirmed</h3>
+<p>Thank you. A confirmation email has been prepared.</p>
+</div>
+
+</main>
+
+<footer>© Sair Fecht Restaurant 2025</footer>
+
+<script>
+const service=document.getElementById("service");
+const courses=document.getElementById("courses");
+service.addEventListener("change",()=>{courses.style.display=service.value==="dinner"?"block":"none";});
+document.getElementById("bookingForm").onsubmit=e=>{
+e.preventDefault();
+document.getElementById("bookingForm").style.display="none";
+document.getElementById("confirmation").style.display="block";
+};
+</script>
+
+</body>
+</html>
+

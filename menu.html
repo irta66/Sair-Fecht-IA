@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu | Sair Fecht</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+  <a href="index.html" class="logo-link">
+    <img src="images/logo.png" alt="Sair Fecht Logo" class="logo">
+  </a>
+
+  <ul class="nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="menu.html" class="active">Menu</a></li>
+    <li><a href="bookingtable.html">Book a Table</a></li>
+  </ul>
+</header>
+<p> Not doing takeaway orders sit in only!!</p>
+<main class="menu-shop">
+
+<section class="menu-area">
+
+<h2>Lunchtime Menu</h2>
+
+<div class="menu-item"><span>Soup of the Day (V, GF)</span><span>£6.00</span><button onclick="addToBasket('Soup of the Day',6)">Add</button></div>
+<div class="menu-item"><span>Ham & Mustard Sandwich</span><span>£7.50</span><button onclick="addToBasket('Ham Sandwich',7.5)">Add</button></div>
+<div class="menu-item"><span>Cheddar & Chutney Sandwich (V)</span><span>£7.00</span><button onclick="addToBasket('Cheddar Sandwich',7)">Add</button></div>
+<div class="menu-item"><span>Roasted Vegetable Salad (V, GF)</span><span>£8.50</span><button onclick="addToBasket('Veg Salad',8.5)">Add</button></div>
+
+<h3>Lunch Drinks</h3>
+<div class="menu-item"><span>Tea / Coffee</span><span>£2.50</span><button onclick="addToBasket('Tea / Coffee',2.5)">Add</button></div>
+<div class="menu-item"><span>Soft Drink</span><span>£3.00</span><button onclick="addToBasket('Soft Drink',3)">Add</button></div>
+
+<h2>Evening Menu</h2>
+<p class="menu-pricing">2 Courses £15 | 3 Courses £18</p>
+
+<h3>Starters</h3>
+<div class="menu-item"><span>Soup of the Day</span><span>Included</span><button onclick="addToBasket('Evening Starter',0)">Add</button></div>
+
+<h3>Mains</h3>
+<div class="menu-item"><span>Roast Chicken Supreme</span><span>Included</span><button onclick="addToBasket('Chicken Main',0)">Add</button></div>
+<div class="menu-item"><span>Cajun Spiced Salmon (GF)</span><span>Included</span><button onclick="addToBasket('Salmon Main',0)">Add</button></div>
+
+<h3>Desserts</h3>
+<div class="menu-item"><span>Lemon Tart</span><span>Included</span><button onclick="addToBasket('Lemon Tart',0)">Add</button></div>
+<div class="menu-item"><span>Cheesecake</span><span>Included</span><button onclick="addToBasket('Cheesecake',0)">Add</button></div>
+
+<h3>Evening Drinks</h3>
+<div class="menu-item"><span>House Wine</span><span>£5.50</span><button onclick="addToBasket('House Wine',5.5)">Add</button></div>
+<div class="menu-item"><span>Fruit Juice</span><span>£3.50</span><button onclick="addToBasket('Fruit Juice',3.5)">Add</button></div>
+
+</section>
+
+<aside class="basket">
+<h3>Your Basket</h3>
+<ul id="basketItems"><li class="empty">Your basket is empty</li></ul>
+<div class="basket-total">Total £<span id="total">0.00</span></div>
+<button onclick="checkout()">Proceed to Payment</button>
+</aside>
+
+</main>
+
+<footer>© Sair Fecht Restaurant 2025</footer>
+
+<script>
+let basket=[], total=0;
+function addToBasket(item,price){basket.push({item,price});total+=price;updateBasket();}
+function removeItem(i){total-=basket[i].price;basket.splice(i,1);updateBasket();}
+function updateBasket(){
+  const list=document.getElementById("basketItems");
+  const t=document.getElementById("total");
+  list.innerHTML=basket.length? "" : "<li class='empty'>Your basket is empty</li>";
+  basket.forEach((b,i)=>{
+    const li=document.createElement("li");
+    li.innerHTML=`${b.item} £${b.price.toFixed(2)} <button onclick="removeItem(${i})">×</button>`;
+    list.appendChild(li);
+  });
+  t.textContent=total.toFixed(2);
+}
+function checkout(){alert("Demo checkout total £"+total.toFixed(2));}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

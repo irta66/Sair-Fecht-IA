@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #eef2f5;
+  color: #333;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  background: #fff;
+}
+
+.logo {
+  height: 45px;
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+  margin-left: auto;
+  gap: 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+.nav .active {
+  font-weight: bold;
+}
+
+.home, .content {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+.welcome {
+  background: #fff;
+  padding: 40px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.primary-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #1f3d4c;
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu-shop {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+}
+
+.menu-area {
+  flex: 2;
+}
+
+.menu-item {
+  display: grid;
+  grid-template-columns: 2fr auto auto;
+  gap: 15px;
+  border-bottom: 1px solid #ddd;
+  padding: 8px 0;
+}
+
+.basket {
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+.basket-total {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.booking-form {
+  max-width: 400px;
+  margin: auto;
+  display: grid;
+  gap: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #fff;
+}
