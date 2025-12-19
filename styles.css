@@ -1,9 +1,10 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #eef2f5;
+  background: #e6f2ff; /* light blue */
   color: #333;
 }
+
 
 header {
   display: flex;
@@ -96,3 +97,4 @@ footer {
   padding: 15px;
   background: #fff;
 }
+
