@@ -1,17 +1,33 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #e6f2ff; /* light blue */
+  background: #e6f2ff; /* light blue page background */
   color: #333;
 }
-
 
 header {
   display: flex;
   align-items: center;
   padding: 15px 30px;
-  background: #e6f2ff; /* light blue */
+  background: #2f5d8a; /* darker blue */
 }
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #2f5d8a; /* darker blue */
+  color: #fff;
+}
+.nav a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav .active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 
 .logo {
   height: 45px;
@@ -24,14 +40,7 @@ header {
   gap: 20px;
 }
 
-.nav a {
-  text-decoration: none;
-  color: #333;
-}
 
-.nav .active {
-  font-weight: bold;
-}
 
 .home, .content {
   max-width: 900px;
@@ -92,10 +101,7 @@ header {
   gap: 10px;
 }
 
-footer {
-  text-align: center;
-  padding: 15px;
-  background: #e6f2ff; /* light blue */
-}
+
+
 
 
